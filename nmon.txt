@@ -1,0 +1,53 @@
+Acompanhamento no SO
+
+nmon 
+htop 
+
+Modo Interativo
+h = Informações de ajuda online
+r = Tipo de máquina, nome da máquina, detalhes do cache e versão do sistema operacional + LPAR
+c = CPU por estatísticas do processador com gráficos de barras
+l = CPU de longo prazo (mais de 75 instantâneos) com gráficos de barra
+m = Estatísticas da memória
+L = Estatísticas de Huge Pages
+V = Memória virtual e estatísticas de SWAP
+k = Estatísticas internas do kernel
+n = Estatísticas e erros da rede
+N = NFS Network File System
+d = Gráfico I/O dos discos
+D = Estatísticas de I/O dos discos
+o = Disk I/O Map (one character per disk showing how busy it is)
+o = Grupos de discos definidos pelo usuário
+j = Sistemas de arquivos
+t = Top Estatísticas de processo. Usa-se 1,3,4,5 para selecionar os dados e o pedido
+u = Top Processos full
+v = modo verboso - tenta fazer recomendações
+b = modo preto e branco (ou use a opção -b)
+. = modo mínimo, ou seja, apenas discos e processos ocupados
+
+key — Other Controls —
++ = o dobro do tempo de atualização da tela
+– = reduz pela metade o tempo de atualização da tela
+q = quit (also x, e or control-C)
+0 = redefinir as contagens de pico para zero
+space = atualiza a tela agora
+Ao visualizar no modo de tela, as estatísticas exibidas são controladas pelo usuário usando as opções de letra única.
+
+No exemplo abaixo, foi sinalizado “c”, “m” e “t
+
+
+
+Modo de Gravação
+De forma a melhorar a visualização é possível realizar a captura dos dados e armazená-los em um arquivo, que posteriormente poderá ser convertido em html, csv e outros. Para isso basta usar os parâmetros:
+
+-f -> Indica que queremos gravar os resultados em um arquivo (o nome é gerado automaticamente)
+
+-s -> Intervalo, em segundos, entre cada captura de dados
+
+-c -> Número de vezes que a ferramenta irá capturar os dados.
+
+Exemplo: nmon -f -s 5 -c 10
+
+Não será exibido nada no terminal, porém a captura está ocorrendo. Após o intervalo de 50 segundos (10 x 5 segundos), poderemos acessar o arquivo criado:
+
+[root@lab01 ~]# nmon -f -s 5 -c 10
